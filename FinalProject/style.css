@@ -1,0 +1,206 @@
+
+
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+#content{
+	margin: 20px;
+	right: 50px;
+}
+
+.to-the-left {
+	width: 40%;
+	float: left;
+}
+
+.to-the-right {
+	width: 50%;
+	float: right;
+}
+
+.to-the-right2 {
+  width: 70%;
+  float: right;
+}
+
+.to-full-extent {
+  width: 100%;
+  float: left;
+}
+
+h1 {
+text-align: center;
+font-family: 'Merriweather', sans-serif;
+}
+
+h3 {
+font-family: 'Merriweather', sans-serif;
+}
+
+h3.spaced {
+  margin-top: 40px;
+  margin-bottom: 0px;
+  clear: both;
+}
+
+p, li { 
+font-size: 18px; 
+font-family: 'Roboto', sans-serif;
+}
+
+ul { 
+font-size: 18px; 
+font-family: 'Roboto', sans-serif;
+margin-bottom: 20px;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+/*For Choropleth*/
+
+.state {
+  stroke: #FFFFFF;
+}
+
+.slider {
+	display: inline-block;
+}
+
+ .yearlabel {
+	font-size: 14px;
+	margin: 3px;
+}
+
+input {
+  display: block;
+  width: 200px;
+  margin: 10px 0px 0px 0px;
+}
+
+.tooltip{
+  position: absolute;
+  padding: 3px 8px;
+  border: 1px solid #bbb;
+  background-color: #BA55D3;
+  font-size: 14px;
+  color: #FFFFFF;
+  pointer-events: none;
+  top: 0px;
+  left: 0px;
+}
+
+.statepath.clicked {
+  stroke: #111;
+  stroke-width: 2px;
+}
+
+/*For line-graph*/
+
+#linegraph {margin-top: 30px;}
+
+#linegraph path { 
+    stroke-width: 2;
+    fill: none;
+}
+
+#linegraph path.line.highlight { 
+    stroke: red !important;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crisp-edges;
+}
+
+.legend {
+    font-size: 16px;
+    font-weight: bold;
+    text-anchor: end;
+}
+
+/*For circle-packing*/
+
+#circlepacking {
+  text-align: center;
+  clear: both;
+ }
+
+ #clear {
+  clear:both;
+ }
+
+.node {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.node:hover {
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+.node--leaf {
+  /*fill: white;*/
+}
+
+.label {
+  font: 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  text-anchor: middle;
+  /*text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;*/
+}
+@media only screen and (max-width: 768px){
+  .label {
+    font-size: 15px;
+  }
+}
+
+.node--root{
+  display: none;
+}
+.label,
+.node--root,
+.node--leaf {
+  pointer-events: none;
+}
+
+/*Places of Consumption*/
+
+text {
+  font: 14px sans-serif;
+  text-anchor: end;
+}
+
+path {
+  stroke: #fff;
+}
+
+ #locationnote {
+  font-size: 13px;
+}
+
+.z-class {
+  z-index: 10;
+}
+
+/*Sources*/
+
+ #sources p {
+  font-size: 14px;
+  clear: both;
+}
+
+ #note p {
+  font-size: 14px;
+  clear: both;
+}
+
+
+
+

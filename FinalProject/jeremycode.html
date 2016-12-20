@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="http://www.bloomberg.com/graphics/assets/img/favicon.png" type="image/x-icon">
+
+    <style type="text/css">
+    /*
+    styles for this project
+    */
+    </style>
+</head>
+
+
+
+<body>
+
+    <input id="slider" type ="range" min ="100" max="500" step ="50" value ="500"/>
+
+    <script src="http://www.bloomberg.com/graphics/assets/js/vendor/d3.3.5.3.js?"></script>
+    <script src="http://www.bloomberg.com/graphics/assets/js/vendor/queue.v1.min.js?"></script>
+
+    <script type="text/javascript">
+    
+    queue()
+        .defer(d3.csv, "Food Vehicle Data Summarized.csv")
+        .await(init)
+
+    function init(err, foodata){
+        
+        // var yearly_by_state = d3.nest()
+        //     .key(function(d){ return d.Year })
+        //     .key(function(d){ return d.State })
+        //     .rollup(function(leaves){ return leaves.length })
+        //     // .key(function(d){ return d['Level 3'] })
+        //     // .rollup(function(leaves){
+
+        //     //     var level3 = d3.nest()
+        //     //         .key(function(d){ return d['Level 3'] })
+        //     //         .rollup(function(leaves){ return leaves.length })
+        //     //         .entries(leaves)
+        //     //     level3.sort(d3.descending(function(l3){ return l3.values }))
+
+        //     //     return {
+        //     //         'cases': leaves.length
+        //     //         , 'level3': level3
+        //     //     }
+        //     // })
+        //     .entries(foodata)
+
+        // console.log('yearly_by_state', yearly_by_state)
+
+        var year = "2010"
+        var FIPS = null
+        
+        var yearsdata = foodata.filter(function(d){
+            var test1 = d.Year == year 
+            var test2 = FIPS == null ? true : d.FIPS == FIPS
+            return test1 && test2
+        })
+        
+        console.log(yearsdata)
+
+        var foodnest = d3.nest()
+            .key(function(d){ return d['Level 1'] })
+            .key(function(d){ return d['Level 2'] })
+            .key(function(d){ return d['Level 3'] })
+            .rollup(function(leaves){ return leaves.length })
+            .entries(yearsdata)
+
+        console.log('foodnest', foodnest)
+
+
+        // var stateData = foodata.filter(function(d){ return d.State == currentstate})
+        // var currentyear = "1998"
+        // var currentyear_state_values = yearly_by_state.filter(function(d){ return d.key == currentyear})[0].values
+
+        // console.log('currentyear_state_values', currentyear_state_values)
+
+
+        // var currentstate = "Texas"
+        // var stateData = foodata.filter(function(d){ return d.State == currentstate})
+        // var currentstate_yearly = d3.nest()
+        //     .key(function(d){ return d.Year })
+        //     .rollup(function(leaves){ return leaves.length })
+        //     .entries(stateData)
+
+        // console.log('stateData', stateData) 
+        // console.log('currentstate_yearly', currentstate_yearly)
+
+        d3.select('#slider').on('change', function(){
+            console.log(d3.event.target.value)
+        })
+
+
+    }
+
+    </script>
+
+
+
+</body>
+
+</html>
