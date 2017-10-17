@@ -1,1 +1,44 @@
-<h1>This is a test!</h1>
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+		<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<title>Generator Project</title>
+	</head>
+	<body>
+		<h1>Poetry in 1 Minute</h1>
+		<h3>from Bulgaria</h3>
+
+		<div class="wrapper">
+        <button class="button">Show me a poem</button>
+        </div>
+
+        <br>
+	    <h2>Poem Title</h2>
+	    <p>[Placeholder for poem body]</p>
+	    <br>
+
+	    <div id = "credits">
+	    <p>Author: <i>Name</i></p>
+	    <p>Translated By: <i>Name</i></p>
+	    </div>
+
+
+		<script>
+		$(document).ready(function(){
+		$('.button').on('click', function(){
+		
+		$('h2').text(title).toUpperCase();
+		$('h2').css('color', color)
+
+        }
+
+		});
+		</script>
+
+		<script src='main.js'></script>
+		<script src=”jquery.min.js”></script>
+		<script src=”application.js”></script>
+
+	</body>
+</html>
