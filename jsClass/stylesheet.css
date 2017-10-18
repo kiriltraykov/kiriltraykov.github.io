@@ -3,16 +3,16 @@ h1, h3 {
 	font-family: Garamond, serif;
 }
 
+#body, #author, #translator {
+	font-family: Garamond, serif;
+}
+
 h2, .button {
 	text-align: center;
 	font-family: 'Lobster', cursive;
 }
 
-p {margin-left: 40%;}
-
- #credits p {
-  margin-top: 0;
-}
+p, #body {margin-left: 40%;}
 
 .wrapper {
     text-align: center;

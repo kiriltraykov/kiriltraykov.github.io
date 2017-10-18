@@ -14,27 +14,30 @@
         </div>
 
         <br>
-	    <h2>Poem Title</h2>
-	    <p>[Placeholder for poem body]</p>
+	    <h2> </h2>
+	    <div id = "body"> </div>
 	    <br>
 
-	    <div id = "credits">
-	    <p>Author: <i>Name</i></p>
-	    <p>Translated By: <i>Name</i></p>
-	    </div>
+	    <p>Author: <div id = "author"><i> </i></div></p>
+	    <p>Translated By: <div id="translator"><i> </i></div></p>
 
 	    <script>
 	    $(document).ready(function(){
 		$('.button').on('click', function(){
 		
-		$('h2').text(title).toUpperCase();
-		$('h2').css('color', color)
+		$('h2').text(poem[0]).toUpperCase();
+		$('h2').css('color', color);
+		$('#body').text(poem[1]);
+		$('#author').text(poem[2]);
+		$('#translator').text(poem[3]);
+		})
 
-		})});
+		});
 	    </script>
 
 		<script src='main.js'></script>
 		<script src=”jquery-3.2.1.min.js”></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 	</body>
 </html>
