@@ -1,24 +1,10 @@
 
-
-var titleNames = ["Another Air", 
-"I assume a comfortable position", 
-"Word Web",
-"Day and Night",
-"Early August",
-"Smog",
-"Evening",
-"The Wooden Spoon",
-"Portrait",
-"Daybreak",
-"Sugar"
-]
-
-var title = choice(titleNames);
-var color = choice(titleColors);
-
 function choice(arr){
   return arr[Math.floor(Math.random() * arr.length)]
 }
+
+var title = choice(titleNames);
+var color = choice(titleColors);
 
 var titleColors = [
 "#d6641b",
@@ -32,3 +18,17 @@ var titleColors = [
 "#ffc220",
 "#004c91",
 "#d6a36e"]
+
+
+var titleNames = ["Another Air", 
+"I assume a comfortable position", 
+"Word Web",
+"Day and Night",
+"Early August",
+"Smog",
+"Evening",
+"The Wooden Spoon",
+"Portrait",
+"Daybreak",
+"Sugar"
+]
