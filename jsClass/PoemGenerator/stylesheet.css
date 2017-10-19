@@ -12,15 +12,14 @@ h2 {
 	font-family: 'Concert One', cursive;
 }
 
-.credits, #body {margin-left: 40%;}
-
 #body {
 	font-family: 'Esteban', serif;
+	margin-left: 40%;
 }
 
-#author #translator {
+.credits {
 	font-family: Garamond, serif;
-	font-weight: bold;
+	margin-left: 40%;
 }
 
 .button {

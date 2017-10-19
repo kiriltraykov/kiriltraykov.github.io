@@ -251,8 +251,8 @@ var color = choice(titleColors);
 		$('h2').text(poem[0].toUpperCase());
 		$('h2').css('color', color);
 		$('#body').html(poem[1]);
-		$('#author').text(poem[2]);
-		$('#translator').text(poem[3]);
+		$('#author').text("Author: " + poem[2]);
+		$('#translator').text("Translator: " + poem[3]);
 		})
 
 		});
