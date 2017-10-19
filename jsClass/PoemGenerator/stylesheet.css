@@ -3,7 +3,7 @@
 	float: left;
 }
 
-h1, h3 {
+h1, h3, .message {
 	text-align: center;
 	font-family: Garamond, serif;
 }
@@ -12,7 +12,7 @@ h2 {
 	font-family: 'Concert One', cursive;
 }
 
-p, #body {margin-left: 40%;}
+.credits, #body {margin-left: 40%;}
 
 #body {
 	font-family: 'Esteban', serif;
