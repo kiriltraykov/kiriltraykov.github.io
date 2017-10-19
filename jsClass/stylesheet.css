@@ -3,11 +3,21 @@ h1, h3 {
 	font-family: Garamond, serif;
 }
 
-#body, #author, #translator {
-	font-family: Garamond, serif;
+#body {
+	font-family: 'Esteban', serif;
 }
 
-h2, .button {
+#author #translator {
+	font-family: Garamond, serif;
+	font-weight: bold;
+}
+
+h2 {
+	text-align: center;
+	font-family: 'Concert One', cursive;
+}
+
+.button {
 	text-align: center;
 	font-family: 'Lobster', cursive;
 }

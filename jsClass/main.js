@@ -3,241 +3,257 @@ function choice(arr){
   return arr[Math.floor(Math.random() * arr.length)]
 }
 
-var poem = choice(poemDetails);
-var color = choice(titleColors);
 
 var titleColors = [
 "#d6641b",
 "#516735",
 "#c4776e",
-"#bfddde",
-"#faf691",
 "#781f1f",
 "#6c0d6d",
 "#007dc6",
 "#ffc220",
 "#004c91",
-"#d6a36e"]
+"#990000",
+"#5a2c35",
+"#0c8b87"]
 
+
+//Use https://www.w3schools.com/charsets/ref_utf_punctuation.asp to check for special characters!
 
 var poemDetails = [
 
-{title: "Another Air", 
- body: "the horse’s nostrils breathe.\
-		And the moist eye\
-		is half-shut on purpose\
-		Since he knows,\
-		why does he need to see?\
-		Only the habit\
+["Another Air", 
+       "the horse&#8217s nostrils breathe.<br>\
+		And the moist eye <br>\
+		is half-shut on purpose <br>\
+		Since he knows, <br>\
+		why does he need to see? <br>\
+		Only the habit <br>\
 		still prevents him\
-		from rattling his hoofs\
+		from rattling his hoofs <br>\
 		towards the stars.",
-author: "Vanya Angelova",
-translator: "Katerina Stoykova-Klemer"},
+"Vanya Angelova",
+"Katerina Stoykova-Klemer"],
 
 
-{title: "I assume a comfortable position",
- body: "on the couch, the pillow, the fluffy blanket,\
-		the books.\
-		The lighting is also good.\
-		Nobody enters,\
-		though I don’t lose hope\
-		that someone would come in and say\
-		with reproach:\
-		this government also fell,\
-		yet you’re reading Lao Tzu.\
-		To which I’d answer:\
+["I assume a comfortable position",
+       "on the couch, the pillow, the fluffy blanket, <br>\
+		the books. <br>\
+		The lighting is also good. <br>\
+		Nobody enters, <br>\
+		though I don&#8217t lose hope <br>\
+		that someone would come in and say <br>\
+		with reproach: <br>\
+		this government also fell, <br>\
+		yet you&#8217re reading Lao Tzu. <br>\
+		To which I&#8217d answer: <br>\
 		exactly.",
-author: "Ekaterina Yosifova",
-translator: "Katerina Stoykova-Klemer"},
+"Ekaterina Yosifova",
+"Katerina Stoykova-Klemer"],
 
 
-{title: "Word Web",
-body:  "Since we are\
-		more or less connected,\
-		with more or less visible\
-		colorful threads,\
-		to the heads, pockets, genitals,\
-		clothes, tongues and so on\
-		\
-		a beautiful cobweb conjoining\
-		and still after all\
-		skipping someone\
-		and why\
-		and who\
-		\
-		I hope,\
+["Word Web",
+       "Since we are <br>\
+		more or less connected, <br>\
+		with more or less visible <br>\
+		colorful threads, <br>\
+		to the heads, pockets, genitals, <br>\
+		clothes, tongues and so on <br>\
+		<br>\
+		a beautiful cobweb conjoining <br>\
+		and still after all <br>\
+		skipping someone <br>\
+		and why <br>\
+		and who <br>\
+		<br>\
+		I hope, <br>\
 		me too.",
-author: "Ekaterina Yosifova",
-translator: "Katerina Stoykova-Klemer"},
+"Ekaterina Yosifova",
+"Katerina Stoykova-Klemer"],
 
 
-{title: "Day and Night",
-body:  "Like a shiny beetle smeared\
-		on the pavement\
-		the day softly darkens\
-		under footfall of the hours;\
-		your silence\
-		loses its spark—\
-		it doesn’t stab me every time\
-		when my telephone turns\
-		deaf and dumb.\
-		Again the dark slips on\
-		its black overcoat,\
-		but I pin\
-		white solitude in my hair\
-		so I can dance barefoot\
-		across\
-		the well-beaten dance floor\
+["Day and Night",
+       "Like a shiny beetle smeared <br>\
+		on the pavement <br>\
+		the day softly darkens <br>\
+		under footfall of the hours; <br>\
+		your silence <br>\
+		loses its spark&ndash; <br>\
+		it doesn&#8217t stab me every time <br>\
+		when my telephone turns <br>\
+		deaf and dumb. <br>\
+		Again the dark slips on <br>\
+		its black overcoat, <br>\
+		but I pin <br>\
+		white solitude in my hair <br>\
+		so I can dance barefoot <br>\
+		across <br>\
+		the well-beaten dance floor <br>\
 		of our love.",
-author: "Zhivka Ivanova",
-translator: "Christopher Buxton"},
+"Zhivka Ivanova",
+"Christopher Buxton"],
 
 
-{title:"Early August",
-body:  "is red\
-		red like watermelon\
-		that we eat by the road\
-		the car doors are open\
-		some sit with their legs stretched out\
-		bent over careful\
-		not to stain their clothes\
-		others are outside standing\
-		spitting seeds\
-		the road is roaring\
-		the sun burns red\
-		but we have thrown\
-		a cloth over the face of the past\
-		and we calmly finish\
-		the fruit that is dripping\
-		red sticky juice\
+["Early August",
+       "is red <br>\
+		red like watermelon <br>\
+		that we eat by the road <br>\
+		the car doors are open <br>\
+		some sit with their legs stretched out <br>\
+		bent over careful <br>\
+		not to stain their clothes <br>\
+		others are outside standing <br>\
+		spitting seeds <br>\
+		the road is roaring <br>\
+		the sun burns red <br>\
+		but we have thrown <br>\
+		a cloth over the face of the past <br>\
+		and we calmly finish <br>\
+		the fruit that is dripping <br>\
+		red sticky juice <br>\
 		seeping seeping into the ground",
-author: "Silvia Choleva",
-translator: "Maria Vassileva"},
+"Silvia Choleva",
+"Maria Vassileva"],
 
 
-{title:"Smog",
-body:  "industrial smog\
-		outlines of botched\
-		urbanization\
-		like the palm of a fortune teller\
-		\
-		the meaning descends on a rope to\
-		your eyelashes and it is as if you are on\
-		the verge of crying\
-		but please don’t\
-		the subtext encapsulates the significant\
-		the text hardly hints at it\
-		the rest we will talk about without writing\
-		down words\
-		I love you satisfyingly easily\
-		you are blindingly distant\
-		I attract you\
-		you repel me:\
-		such simple rules of\
+["Smog",
+       "industrial smog <br>\
+		outlines of botched <br>\
+		urbanization <br>\
+		like the palm of a fortune teller <br>\
+		<br>\
+		the meaning descends on a rope to <br>\
+		your eyelashes and it is as if you are on <br>\
+		the verge of crying <br>\
+		but please don&#8217t <br>\
+		the subtext encapsulates the significant <br>\
+		the text hardly hints at it <br>\
+		the rest we will talk about without writing <br>\
+		down words <br>\
+		I love you satisfyingly easily <br>\
+		you are blindingly distant <br>\
+		I attract you <br>\
+		you repel me: <br>\
+		such simple rules of <br>\
 		mechanics",
-author: "Rosen Kukushev",
-translator: "Composed in English"},
+"Rosen Kukushev",
+"Composed in English"],
 
 
-{title:"Evening",
-body:  "The rhythm\
-		of the falling rain\
-		is not mine.\
-		\
-		The sound of it\
-		lulls us\
-		to sleep\
-		repeating,\
-		certain,\
-		and gray as rain.\
-		\
+["Evening",
+       "The rhythm <br>\
+		of the falling rain <br>\
+		is not mine. <br>\
+		<br>\
+		The sound of it <br>\
+		lulls us <br>\
+		to sleep <br>\
+		repeating,<br>\
+		certain, <br>\
+		and gray as rain. <br>\
+		<br>\
 		Love\
-		is like that\
-		when it falls\
-		slowly\
-		within me\
-		washing out the lines\
-		of your face\
-		and I forget…\
-		\
-		You have a body.\
-		\
+		is like that <br>\
+		when it falls <br>\
+		slowly <br>\
+		within me <br>\
+		washing out the lines <br>\
+		of your face <br>\
+		and I forget&hellip; <br>\
+		<br>\
+		You have a body. <br>\
+		<br>\
 		Remind me.",
-author: "Holly Karapetkova",
-translator: "Kiril Merjanski"},
+"Holly Karapetkova",
+"Kiril Merjanski"],
 
 
-{title:"The Wooden Spoon",
-body:  "My mother cooked with it\
-		                 & when she got sick\
-		I cooked with it\
-		                 & when I left\
-		my father cooked with it\
-		                 & when I came back\
-		                 for a brief visit\
-		                 to see\
-		                 if I can love him\
-		                 still\
-		\
-		I took the spoon\
-		\
-		                  & I haven’t\
-		                 cooked since.",
-author: "Katerina Stoykova-Klemer",
-translator: "Composed in English"},
+["The Wooden Spoon",
+       "My mother cooked with it <br>\
+		&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;& when she got sick <br>\
+		I cooked with it <br>\
+		&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;& when I left <br>\
+		my father cooked with it <br>\
+		&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;& when I came back <br>\
+		&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;for a brief visit <br>\
+		&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;to see <br>\
+		&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;if I can love him <br>\
+		&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;still <br>\
+		<br>\
+		I took the spoon <br>\
+		<br>\
+		&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;& I haven&#8217t <br>\
+		&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;cooked since.",
+"Katerina Stoykova-Klemer",
+"Composed in English"],
 
 
-{title: "Portrait",
-body:  "Sometimes she tells unbelievable stories.\  
-		She eats the day in small bites.\
-		She smiles in the darkness.\
-		She is all sunshine and a few white clouds.\
-		Sometimes she willingly lies down\
-		in the plate of the everyday.\
-		She doesn’t care either way.\
-		There are no words.\
-		There are no stories.\
-		There is no darkness\
-		worth\
-		smiling in.\
-		She’s so indifferent\
-		that you wonder—\
-		is this the calm before the storm,\
+["Portrait",
+       "Sometimes she tells unbelievable stories. <br>\
+		She eats the day in small bites. <br>\
+		She smiles in the darkness. <br>\
+		She is all sunshine and a few white clouds. <br>\
+		Sometimes she willingly lies down <br>\
+		in the plate of the everyday. <br>\
+		She doesn&#8217t care either way. <br>\
+		There are no words. <br>\
+		There are no stories. <br>\
+		There is no darkness <br>\
+		worth <br>\
+		smiling in. <br>\
+		She&#8217s so indifferent <br>\
+		that you wonder&ndash; <br>\
+		is this the calm before the storm, <br>\
 		or its eye?",
-author: "Ivanka Mogilska",
-translator: "Angela Rodel"},
+"Ivanka Mogilska",
+"Angela Rodel"],
 
 
-{title: "Daybreak",
-body:  "Face,\
-		lonely jetty\
-		where my suspicion breaks.\
-		Hands,\
-		in which I allow myself\
-		to overflow.\
-		Home,\
-		where the days come\
-		to visit, late morning\
-		I awake\
-		beside you still\
-		damp with breath from beyond\
-		tangled in the darkness\
-		but alive to tears\
-		flushed close to light:\
-		thank you.",
-author: "Dostena Anguelova-Lavergne",
-translator: "Holly Karapetkova"},
+["Daybreak",
+       `Face, <br>\n
+		lonely jetty <br>\n
+		where my suspicion breaks. <br>\
+		Hands, <br>\
+		in which I allow myself <br>\
+		to overflow. <br>\
+		Home, <br>\
+		where the days come <br>\
+		to visit, late morning <br>\
+		I awake <br>\
+		beside you still <br>\
+		damp with breath from beyond <br>\
+		tangled in the darkness <br>\
+		but alive to tears <br>\
+		flushed close to light: <br>\
+		thank you.`,
+"Dostena Anguelova-Lavergne",
+"Holly Karapetkova"],
 
 
-{title: "Sugar",
-body:  "She can’t cry\
-		because her eyes\
-		are cubes\
-		     of sugar.",
-author: "Blagosveta Pugyova",
-translator: "Eireene Nealand and Ilya Kaminsky"}
+["Sugar",
+       "She can&#8217t cry <br>\
+		because her eyes <br>\
+		are cubes <br>\
+		&ensp;&ensp;&ensp;&ensp;&ensp;of sugar.",
+"Blagosveta Pugyova",
+"Eireene Nealand and Ilya Kaminsky"]
 
 ]
 
+
+
+    $(document).ready(function(){
+		$('.button').on('click', function(){
+
+			var poem = choice(poemDetails);   
+var color = choice(titleColors);
+		
+		$('h2').text(poem[0].toUpperCase());
+		$('h2').css('color', color);
+		$('#body').html(poem[1]);
+		$('#author').text(poem[2]);
+		$('#translator').text(poem[3]);
+		})
+
+		});
 
