@@ -22,11 +22,28 @@ h2 {
 	margin-left: 40%;
 }
 
-.footnote {
+#footnote1 {
 	font-family: Garamond, serif;
 	font-size: 80%;
 	position:fixed;
-    bottom:0;
+    bottom:2.5%;
+}
+
+#footnote2 {
+	font-family: Garamond, serif;
+	font-size: 80%;
+	position:fixed;
+    bottom:0%;
+}
+
+#opensource {
+	font-family: Garamond, serif;
+	font-size: 100%;
+	position:fixed;
+    bottom:10%;
+    width: 15%; 
+    padding: 1%;
+    word-wrap: normal;
 }
 
 .button {
