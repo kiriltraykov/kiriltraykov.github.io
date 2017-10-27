@@ -44,6 +44,7 @@ var colors = [
         $('#line3').delay(6000).show(0);
         $('#line4').hide;
         $('#frequencybuttons').hide();
+        $('#answers').hide();
 
 
 		$('#button1').on('click', function(){
@@ -54,6 +55,7 @@ var colors = [
 		$('#frequencybuttons').hide();
 		$('#outcomemessage').text(" ");
 		$('#conclusion').text(" ");
+        $('#answers').hide();
    
       		});
 
@@ -77,6 +79,7 @@ var colors = [
         $('#button4').text(freq2);
         $('#button5').text(freq3);
         $('#button6').text(freq4);
+        $('#answers').hide();
 
         $('#button3').on('click', function(){
 		
@@ -87,6 +90,7 @@ var colors = [
         }
 
         $('#conclusion').text("I say " + showWord + " " + showFrequency + " times in a million words! So that makes it " + showFrequencyBin + ".");
+        $('#answers').show();
 
       		});
 
@@ -99,6 +103,7 @@ var colors = [
         }
 
         $('#conclusion').text("I say " + showWord + " " + showFrequency + " times in a million words! So that makes it " + showFrequencyBin + ".");
+        $('#answers').show();
 
       		});
 
@@ -111,6 +116,7 @@ var colors = [
         }
 
         $('#conclusion').text("I say " + showWord + " " + showFrequency + " times in a million words! So that makes it " + showFrequencyBin + ".");
+        $('#answers').show();
 
       		});
 
@@ -123,6 +129,7 @@ var colors = [
         }
 
         $('#conclusion').text("I say " + showWord + " " + showFrequency + " times in a million words! So that makes it " + showFrequencyBin + ".");
+        $('#answers').show();
 
       		});
 

@@ -31,6 +31,10 @@ body {
 	font-family: 'Unkempt', cursive;
 }
 
+#conclusion {
+	font-weight: bold;
+}
+
 #footnote1 {
 	font-family: 'Crimson Text', serif;
 	font-size: 80%;
