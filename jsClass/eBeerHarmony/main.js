@@ -13,7 +13,7 @@
           //       return console.log(error)
           //       });                                                                            
 
-// This is why will proceed with random selection from a list of 20 beers that I connected to in the browser.
+// This is why will proceed with random selection from a list of 20 beers that I scraped by connecting to the API in the browser.
 
 function choice(arr){
   return arr[Math.floor(Math.random() * arr.length)]
@@ -87,6 +87,9 @@ $(document).ready(function(){
         $('#beerName').text(chosenBeerName);
         $('#beerDescription').text(chosenBeerDescription);
         $('#beerABV').text("ABV percent: " + chosenBeerABV);
+        window.setTimeout(function () {
+        $("#cheers").html("Cheers!");
+        }, 3000);
        
 
         });
