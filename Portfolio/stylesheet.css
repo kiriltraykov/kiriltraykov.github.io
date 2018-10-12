@@ -1,0 +1,66 @@
+.anim-typewriter{
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 24em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
+
+body {
+	margin-left:20%;
+}
+
+#myname {
+	font-size: 60px;
+	font-family: 'VT323', monospace;
+}
+
+p {
+	font-size: 1.3vw;
+}
+
+img.resize {
+  max-width:35%;
+  height: auto;
+  float: left;
+  margin: 0px 4% 0px 0px;
+}
+
+#box1, #box2 {
+   display: block;
+}
+
+#box2 {
+	width: 80%;
+	font-family: 'Lora', serif;
+	font-size: 1.1em;
+}
+
+#button1 {
+    display: block; margin: auto;
+	font-family: 'Crimson Text', serif;
+	font-size: 2vw;
+	background-color: #699DB6;
+	border-color: rgba(105, 157, 182, 0.3);
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+	color: #FFF;
+	width: 30%;
+	}
+
+#button1:hover {
+	background-color: #4F87A2;
+	border-color: rgba(0,0,0,0.5);
+	}
+	
+#button1:active {
+	background-color: #3C677B;
+	border-color: rgba(0,0,0,0.9);
+	}
+
+
+
