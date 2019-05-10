@@ -742,7 +742,7 @@ function drawchartInTile3(selectplayer) {
 
       var margin1 = {top1: 20, right1: 18, bottom1: 20, left1: 2},
       width1 = $('#chartInTile3').width() - margin1.left1 - margin1.right1,
-      height1 = 400 - margin1.top1 - margin1.bottom1;
+      height1 = 450 - margin1.top1 - margin1.bottom1;
 
       var svg1 = d3.select("#chartInTile3").append("svg")
       .attr("width", '100%')
@@ -751,15 +751,15 @@ function drawchartInTile3(selectplayer) {
       .attr("transform", "translate(" + margin1.left1 + "," + margin1.top1 + ")");
   
       var x1 = d3.scaleLinear()
-      .domain([0, 110000])
+      .domain([0, 120000])
       .range([0, width1])
       
       var y1 = d3.scaleLinear()
-      .domain([0, 7000])
+      .domain([0, 8000])
       .range([height1, 0])
       
-      var xAxis = d3.axisBottom(x1).ticks(10);
-      var yAxis = d3.axisLeft(y1).ticks(7);
+      var xAxis = d3.axisBottom(x1).ticks(11);
+      var yAxis = d3.axisLeft(y1).ticks(8);
 
 
       var line = d3.line()
@@ -783,57 +783,15 @@ function drawchartInTile3(selectplayer) {
         var formatComma = d3.format(",")
         var formatWholeNumber = d3.format(",d")
         
-        if(data2[i].Player == selectplayer){
-         
-        svg1.append("text")
-        .attr("text-anchor", "start")
-        .attr("fill", "#8E388E")
-        .attr("font-weight", "bold")
-        .html(function(d) {  
-                            return "<tspan x='0' dy='1.2em'>" + 
-                            data2[i].tournaments.slice(-1)[0].Player + ": " + formatComma(data2[i].tournaments.slice(-1)[0].cumDistance) + " km total" +
-                            "</tspan>" + 
-                            "<tspan x='0' dy='1.2em'>" +
-                            "Traveled " + formatWholeNumber((data2[i].tournaments.slice(-1)[0].cumDistance)/(data2[i].tournaments.slice(-1)[0].cumPoints)) + "km for 1 ranking point" +
-                            "</tspan>"});
-        }
-
         var path = svg1.append("path")
         .datum(data2[i].tournaments)
-        .attr("stroke", "#C5C1AA")
+        .attr("stroke", "#8BFFB0")
         .attr("fill", "none")
         .attr("stroke-width", 2.0)
         .attr("d", function(d,i) { return line(d)})
         
-        var totalLength = path.node().getTotalLength();
         
-            svg1.selectAll(".tourn")
-            .data(data2[i].tournaments)
-            .enter()
-            .append('text')
-            .attr('class', 'tourn')
-            .text(function(d) { 
-             if(d.tourney == ('Melbourne, Australia')||
-                d.tourney == ('Paris, France')||
-                d.tourney == ('Wimbledon, U.K.')||
-                d.tourney == ('New York, USA')) {
-              return d.tourney; 
-             }
-            })
-            .attr("x", function(d) { return  x1(d.cumDistance)-20; })
-            .attr("y", function(d) { return  y1(d.cumPoints)-30; })
-            
-            svg1.selectAll(".gsline")
-            .data(data2[i].tournaments)
-            .enter()
-            .append('line')
-            .attr('class', 'gsline')
-            .attr("x1", function(d) { return  x1(d.cumDistance); })
-            .attr("y1", function(d) { return  y1(d.cumPoints); })
-            .attr("x2", function(d) { return  x1(d.cumDistance)-20; })
-            .attr("y2", function(d) { return  y1(d.cumPoints)-20; })
-    
-            
+        var totalLength = path.node().getTotalLength();
         
         path
         .attr("stroke-dasharray", totalLength + " " + totalLength)
@@ -842,6 +800,138 @@ function drawchartInTile3(selectplayer) {
         .duration(2000)
         // .ease("linear")
         .attr("stroke-dashoffset", 0)
+        
+        if(data2[i].Player == selectplayer){
+         
+        svg1.append("text")
+        .attr("text-anchor", "start")
+        .attr("fill", "#8E388E")
+        .attr("font-weight", "bold")
+        .html(function(d) {  
+                            return "<tspan x='0' dy='1.2em'>" + 
+                            data2[i].tournaments.slice(-1)[0].Player + " traveled " + formatComma(data2[i].tournaments.slice(-1)[0].cumDistance) + 
+                            " km to play in " + data2[i].tournaments.length + " tournaments." +
+                            "</tspan>" + 
+                            "<tspan x='0' dy='1.2em'>" +
+                            "Her travel efficiency was " + formatWholeNumber((data2[i].tournaments.slice(-1)[0].cumDistance)/(data2[i].tournaments.slice(-1)[0].cumPoints)) + " km for 1 ranking point." +
+                            "</tspan>"});
+        
+            svg1.selectAll(".tourn1")
+            .data(data2[i].tournaments)
+            .enter()
+            .append('text')
+            .attr('class', 'tourn1')
+            .text(function(d) { 
+             if(d.tourney == 'Melbourne, Australia') {
+              return d.tourney; 
+             }
+            })
+            .attr("x", function(d) { return  x1(d.cumDistance)+5; })
+            .attr("y", function(d) { return  y1(d.cumPoints)-50; })
+            
+            svg1.selectAll(".gsline1")
+            .data(data2[i].tournaments)
+            .enter()
+            .append('line')
+            .attr('class', 'gsline1')
+            .attr('stroke','black')
+            .attr('stroke-dasharray','5')
+            .attr("x1", function(d) { if(d.tourney == 'Melbourne, Australia') {return  x1(d.cumDistance); }})
+            .attr("y1", function(d) { if(d.tourney == 'Melbourne, Australia') {return  y1(d.cumPoints); }})
+            .attr("x2", function(d) { if(d.tourney == 'Melbourne, Australia') {return  x1(d.cumDistance)+5; }})
+            .attr("y2", function(d) { if(d.tourney == 'Melbourne, Australia') {return  y1(d.cumPoints)-45; }})
+            
+            svg1.selectAll(".tourn2")
+            .data(data2[i].tournaments)
+            .enter()
+            .append('text')
+            .attr('class', 'tourn2')
+            .text(function(d) { 
+             if(d.tourney == 'Paris, France') {
+              return d.tourney; 
+             }
+            })
+            .attr("x", function(d) { return  x1(d.cumDistance)-45; })
+            .attr("y", function(d) { return  y1(d.cumPoints)-48; })
+            
+            svg1.selectAll(".gsline2")
+            .data(data2[i].tournaments)
+            .enter()
+            .append('line')
+            .attr('class', 'gsline2')
+            .attr('stroke','black')
+            .attr('stroke-dasharray','5')
+            .attr("x1", function(d) { if(d.tourney == 'Paris, France') {return  x1(d.cumDistance); }})
+            .attr("y1", function(d) { if(d.tourney == 'Paris, France') {return  y1(d.cumPoints); }})
+            .attr("x2", function(d) { if(d.tourney == 'Paris, France') {return  x1(d.cumDistance)-40; }})
+            .attr("y2", function(d) { if(d.tourney == 'Paris, France') {return  y1(d.cumPoints)-45; }})
+            
+            svg1.selectAll(".tourn3")
+            .data(data2[i].tournaments)
+            .enter()
+            .append('text')
+            .attr('class', 'tourn3')
+            .text(function(d) { 
+             if(d.tourney == 'Wimbledon, U.K.') {
+              return d.tourney; 
+             }
+            })
+            .attr("x", function(d) { return  x1(d.cumDistance)+30; })
+            .attr("y", function(d) { return  y1(d.cumPoints)+30; })
+            
+            svg1.selectAll(".gsline3")
+            .data(data2[i].tournaments)
+            .enter()
+            .append('line')
+            .attr('class', 'gsline3')
+            .attr('stroke','black')
+            .attr('stroke-dasharray','5')
+            .attr("x1", function(d) { if(d.tourney == 'Wimbledon, U.K.') {return  x1(d.cumDistance); }})
+            .attr("y1", function(d) { if(d.tourney == 'Wimbledon, U.K.') {return  y1(d.cumPoints); }})
+            .attr("x2", function(d) { if(d.tourney == 'Wimbledon, U.K.') {return  x1(d.cumDistance)+30; }})
+            .attr("y2", function(d) { if(d.tourney == 'Wimbledon, U.K.') {return  y1(d.cumPoints)+25; }})
+            
+             svg1.selectAll(".tourn4")
+            .data(data2[i].tournaments)
+            .enter()
+            .append('text')
+            .attr('class', 'tourn4')
+            .text(function(d) { 
+             if(d.tourney == 'New York, USA') {
+              return d.tourney; 
+             }
+            })
+            .attr("x", function(d) { return  x1(d.cumDistance)+20; })
+            .attr("y", function(d) { return  y1(d.cumPoints)+25; })
+            
+            svg1.selectAll(".gsline4")
+            .data(data2[i].tournaments)
+            .enter()
+            .append('line')
+            .attr('class', 'gsline4')
+            .attr('stroke','black')
+            .attr('stroke-dasharray','5')
+            .attr("x1", function(d) { if(d.tourney == 'New York, USA') {return  x1(d.cumDistance); }})
+            .attr("y1", function(d) { if(d.tourney == 'New York, USA') {return  y1(d.cumPoints); }})
+            .attr("x2", function(d) { if(d.tourney == 'New York, USA') {return  x1(d.cumDistance)+20; }})
+            .attr("y2", function(d) { if(d.tourney == 'New York, USA') {return  y1(d.cumPoints)+15; }})
+            
+            function timedText() {
+            var timedText1 = document.getElementsByClassName("gsline4");
+            setTimeout(function(){ return timedText1 }, 2000);
+            }
+            
+             svg1.selectAll(".circlemark")
+            .data(data2[i].tournaments)
+            .enter()
+            .append('circle')
+            .attr('class', 'circlemark')
+            .attr("cx", function(d) { return  x1(d.cumDistance); })
+            .attr("cy", function(d) { return  y1(d.cumPoints); })
+            .attr("r", "2px")
+            .style("fill", "black")
+         
+        }
 
          
         path.on("mouseover", function(tournaments,i) {
@@ -866,19 +956,117 @@ function drawchartInTile3(selectplayer) {
            .attr("font-weight", "bold")
            .html(function(d) {  
                                return "<tspan x='0' dy='1.2em'>" + 
-                               hoveredPlayer.Player + ": " + formatComma(hoveredPlayer.tournaments.slice(-1)[0].cumDistance) + " km total" +
+                               hoveredPlayer.Player + " traveled " + formatComma(hoveredPlayer.tournaments.slice(-1)[0].cumDistance) +
+                                " km to play in " + hoveredPlayer.tournaments.length + " tournaments." +
                                "</tspan>" + 
                                "<tspan x='0' dy='1.2em'>" +
-                               "Traveled " + formatWholeNumber((hoveredPlayer.tournaments.slice(-1)[0].cumDistance)/(hoveredPlayer.tournaments.slice(-1)[0].cumPoints)) + "km for 1 ranking point" +
+                               "Her travel efficiency was " + formatWholeNumber((hoveredPlayer.tournaments.slice(-1)[0].cumDistance)/(hoveredPlayer.tournaments.slice(-1)[0].cumPoints)) + " km for 1 ranking point." +
                                "</tspan>"});
-        };
-        d3.select(this).attr("stroke", "black").attr("stroke-width", 4.0).moveToFront();
+                               
+           if (hoveredPlayer.Player == "Simona Halep") {
+            $('#player1').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }  
+           if (hoveredPlayer.Player == "Angelique Kerber") {
+            $('#player2').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Caroline Wozniacki") {
+            $('#player3').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Elina Svitolina") {
+            $('#player4').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Naomi Osaka") {
+            $('#player5').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Sloane Stephens") {
+            $('#player6').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Petra Kvitova") {
+            $('#player7').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Karolina Pliskova") {
+            $('#player8').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Kiki Bertens") {
+            $('#player9').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Daria Kasatkina") {
+            $('#player10').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Aryna Sabalenka") {
+            $('#player11').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Anastasija Sevastova") {
+            $('#player12').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Elise Mertens") {
+            $('#player13').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Julia Goerges") {
+            $('#player14').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Ashleigh Barty") {
+            $('#player15').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Serena Williams") {
+            $('#player16').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Madison Keys") {
+            $('#player17').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Garbine Muguruza") {
+            $('#player18').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Caroline Garcia") {
+            $('#player19').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Qiang Wang") {
+            $('#player20').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Anett Kontaveit") {
+            $('#player21').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Jelena Ostapenko") {
+            $('#player22').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Carla Suarez Navarro") {
+            $('#player23').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Mihaela Buzarnescu") {
+            $('#player24').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Dominika Cibulkova") {
+            $('#player25').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Camila Giorgi") {
+            $('#player26').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Lesia Tsurenko") {
+            $('#player27').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Su-Wei Hsieh") {
+            $('#player28').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Maria Sharapova") {
+            $('#player29').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+           if (hoveredPlayer.Player == "Aliaksandra Sasnovich") {
+            $('#player30').css({"color": "#8E388E","font-weight": "bold", "font-size": "1.5vw"});
+           }
+                               
+           d3.select(this).attr("stroke", "black").attr("stroke-width", 4.0).moveToFront();
+        
+          };
+        
         })
+        
         .on("mouseout", function(d) {
-         d3.select(this).attr("stroke", "#C5C1AA").attr("stroke-width", 2.0);
+         d3.select(this).attr("stroke", "#8BFFB0").attr("stroke-width", 2.0);
          svg1.select(".playerInfo").remove();
+         $('.playerList').removeAttr('style');
          });
          
+            
       }
 
        svg1.append("g")
@@ -900,7 +1088,7 @@ function drawchartInTile3(selectplayer) {
       .call(yAxis)
       .append("text")
       .attr("class", "label")
-      .attr("x", height1-165)
+      .attr("x", height1-145)
       .attr("y", 60)
       .attr("fill", "black")
       .attr("transform", "rotate(90)" )

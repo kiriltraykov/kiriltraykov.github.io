@@ -1,5 +1,5 @@
 body {
-    background-color: #EE6363;
+    background-color: #ff8b94;
     font-family: 'Sanchez', serif;
     margin-left: 2%;
     margin-right: 2%;
@@ -17,7 +17,7 @@ h3 {
 	margin-top: 5px;
 }
 
-p {
+p, li {
 	font-size: 1.0vw;
 }
 
@@ -34,6 +34,7 @@ p {
 
 #courtbutton:hover {
 		background-color: black;
+		cursor: pointer;
 	}
 
 .wrapper {
@@ -111,6 +112,7 @@ p {
 /*.court__nml--right:hover*/
  {
  	background-color: #8E388E;
+ 	cursor: pointer;
 	}
 	
 #tile1 img {
@@ -121,8 +123,8 @@ p {
 }
 
 #context {
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: 29%;
+  margin-right: 29%;
 }
 	
 #firsthalf, #secondhalf {
@@ -147,6 +149,7 @@ p {
   margin-top: 0px;
   margin-bottom: 1px;
   transition: height 2s;
+  cursor: pointer;
 }
 
 #pt3, #pt18, #pt22, #pt29 {
@@ -161,11 +164,16 @@ p {
 .legendrect {
   width: 20px;
   height: 20px;
+  padding-right: 5px;
 }
 
 .legendtext {
  font-size: 0.6vw;
  margin-top: 0;
+}
+
+#legendrect0 {
+background: #548B54;
 }
 
 #legendrect1 {
@@ -207,11 +215,19 @@ background: #00868B;
   color: #8E388E;
   font-weight: bold;
   font-size: 1.5vw;
+  cursor: pointer;
   }
   
 #player0 {
   font-size: 1.2vw;
-  color: gold;
+  border-radius: 25px;
+  border: 2px solid black;
+  width: 47%;
+  cursor: pointer;
+}
+
+#player0:hover {
+  background: #8E388E;
 }
 
 #player0x {
@@ -226,13 +242,12 @@ background: #00868B;
 }
 
 #chartInTile3{
-position: fixed;
 display: inline-block;
 width: 50%;
 height: 450px;
 }
 
-.tourn{
+.tourn1, .tourn2, .tourn3, .tourn4 {
   font-size: 0.75vw;
 }
 
@@ -240,8 +255,9 @@ height: 450px;
 #tableInTile3 {
   float: right;
   width: 23%;
+  height: 450px;
   display: grid; 
-  grid-template-columns: 0.6fr 1.5fr 0.4fr;
+  grid-template-columns: 0.5fr 1.5fr 0.5fr;
   align-items: center;
   grid-row-gap: 0;
 }
@@ -266,18 +282,20 @@ height: 450px;
   text-align: center;
   padding-top: 2px;
   padding-bottom: 2px;
+  margin-right: 10px;
   margin-top: 0px;
   margin-bottom: 0px;
 }
 
 #conclusiondiv{
   float:left;
-  width: 30%;
+  width: 38.5%;
 }
 
 #tile4 img {
-    margin-left: 10%;
-    height: auto;
+    margin-left: 5%;
+    height: 600px;
+    image-rendering: auto;
 }
 
 a { color: white; }

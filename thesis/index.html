@@ -37,9 +37,9 @@
 	    <img src="contextflier_page1.png">
 	    <img src="contextflier_page2.png">
 	    
-	    <p id = "context">
+	    <div id = "context">
 	    
-	    Tennis is unique from other sports with the fact that there are no "home games" for the players and all tournaments take 
+	    <p>Tennis is unique from other sports with the fact that there are no "home games" for the players and all tournaments take 
 	    place in different cities throughout the world. Players on the Women's Tennis Association (WTA) tour typically spend 10+ 
 	    months of the year on the road, which could include weekly change of climates and altitudes.
 	    <br>
@@ -48,14 +48,15 @@
 	    reasons: 
 	    <br>
 	    <br>
-     > tournament is in player's home country/town <br> 
-	    > tournament offers appearance money <br>
-	    > player is coming back from injury and needs match play to get back in form <br>
-     > player suffered an unexpected early-round loss and needs more match play, especially before a Grand Slam <br>
-	    > player is chasing the year-end WTA Finals <br>
-	    > player is just curious about a place <br>
+	    </p>
+     <li>tournament is in player's home country/town</li> 
+	    <li>tournament offers appearance money</li>
+	    <li>player is coming back from injury and needs match play to get back in form</li>
+     <li>player suffered an unexpected early-round loss and needs more match play</li>
+	    <li>player is chasing the year-end WTA Finals</li>
+	    <li>player is just curious about a place</li>
 	    <br>
-	    Such frequent travel can lead to the accumulatation of fatigue that could negatively influence performance. Medical 
+	    <p>Such frequent travel can lead to the accumulatation of fatigue that could negatively influence performance. Medical 
 	    professionals state that jet lag, sleep interruptions, and altitude changes can result in miscoordinated performance, 
 	    if there is no adequate time for adjustment. The magnitude of this effect is unknown, but <b>this research evaluates the 
 	    rate at which the top 30 players earn points per kilometers traveled</b>.
@@ -64,16 +65,18 @@
 	    The author analyzes the full 2018 tennis season of the WTA for the year-end top 30 players, who are in the best position 
 	    to overcome the drawbacks of travel because of their: 
 	    <br> 
-	    <br> 
-	    > top earnings (e.g. first-class travel) <br>
-	    > available resources (e.g. physiologists) <br>
-	    > "smart scheduling" (e.g. cherry-picking tournaments) <br>
 	    <br>
-	    Let's see what it means to be efficient on the WTA tour!
+	    </p>
+	    <li>top earnings (e.g. first-class travel)</li>
+	    <li>available resources (e.g. physiologists)</li>
+	    <li>"smart scheduling" (e.g. cherry-picking tournaments)</li>
+	    <br>
+	    <p>Let's see what it means to be efficient on the WTA tour!
 	    <br>
 	    <br>
 	    <br>
 	    </p>
+	    </div>
 	    </div>
 		              
 		<div id="tile2">
@@ -205,7 +208,7 @@
                                 <p class="allt" id="pt36">Singapore, Singapore</p>
                                 <p class="allt" id="pt37">Zhuhai, China</p>
                                 <p></p>
-                                <p class="allt" id="pt47">S-Hertog., Netherlands</p>
+                                <p class="allt" id="pt47">Den Bosch, Holland</p>
                                 <p class="allt" id="pt48">Mallorca, Spain</p>
                                 <p></p>
                                 <p></p>
@@ -249,8 +252,10 @@
         </div>
         
         <div id="legend">
+        <div class="legendrect" id="legendrect0"></div>
+        <p class="legendtext" id="legendtext0">&nbsp;&nbsp;Grand Slam<br>&nbsp;&nbsp;Tournament&nbsp;&nbsp;</p>
         <div class="legendrect" id="legendrect1"></div>
-        <p class="legendtext" id="legendtext1">&nbsp;&nbsp;Consecutive<br>&nbsp;&nbsp;Travel</p>
+        <p class="legendtext" id="legendtext1">&nbsp;&nbsp;Consecutive&nbsp;&nbsp;<br>&nbsp;&nbsp;Travel</p>
         <div class="legendrect" id="legendrect2"></div>
         <p class="legendtext" id="legendtext2">&nbsp;&nbsp;Non-Consecutive<br>&nbsp;&nbsp;Travel</p>
         </div>
@@ -307,7 +312,7 @@
 		<div id="tile3">
 		 
 		  <div id="playerListHolder">
-		                          <div class ="playerList" id="player0">See All Players</div>
+		                          <div id="player0">&nbsp;&nbsp;See All Players</div>
 		                          <div id="player0x">Year-End top 30 by rank:</div>
                             <div class="playerList" id="player1">No.1 Simona Halep</div>
                             <div class="playerList" id="player2">No.2 Angelique Kerber</div>
@@ -468,8 +473,6 @@
                                     <p class="zz", id="pt146"></p>
                                     <p class="yy", id="pt246"></p>
                                     <br>
-                                    <br>
-                                    <br>
 
                             </div>
                        
@@ -481,7 +484,19 @@
 		<p><b>New Rule of Thumb:</b> In order to be in the top 10, a player generally needs to achieve travel efficiency rate of 1 point for every 20km traveled.
 		<br>
 		<br>
-		Overall, this research confirms that the top players maintain very high travel efficiency - they collect more points on average for 
+	 There are 2 callouts for this efficiency measure:</p>
+	 <li>It can only be compared across players, who played a full schedule (case example: Serena Williams  appears most efficient 
+	 but finished the year at No. 16 because she only played in 7 tournaments, which is much below the 17 alloted tournaments that the WTA uses for ranking). 
+	 A full schedule can be defined as 15 tournaments or more, which is what 90% of the top 30 played in 2018.</li>
+	 <br>
+	 <li>
+	 It does not mimic the rankings one-to-one because of the capped approach to the ranking calculation. 
+	 Since the ranking system takes the 17 best tournaments, it rewards high peaks in key tournaments and could leave more extensive travel 
+	 to smaller tournaments unaccounted for. In that sense, losses in smaller tournaments at far-off loactions can have little effect 
+	 on the rankings if a player has already won big at another stage, but such losses could change the travel efficiency calculation. This is why we see 
+	 players with good travel efficiency still not make it into the top 10: they did not peak as much in the highest-category tournaments.
+	 </li>
+		<p>Overall, this research confirms that the top players maintain very high travel efficiency - they collect more points on average for 
 		their travels and are no "journeywomen", but focused professionals playing on a "smart schedule" in order to 
 		achieve the maximum returns at the least physical expenditure. 
 		<br>
@@ -491,26 +506,13 @@
 		issues of travel in their interviews, as reported by sports journalist Nick McCarvel 
 		(read full interview <a href="interview.pdf">here</a>).
 		<br>
-			<br>
-				<br>
-					<br>
-						<br>
-							<br>
-								<br>
-									<br>
-										<br>
-											<br>
-												<br>
-													<br>
-														<br>
-															<br>
-															<br>
-															<br>
-															<br>
-												
+		<br>
+		<br>
+		<br>
+		<br>
 		</p>
 		</div> 
-		<img src="efficiency.png">
+		<img src="efficiency.jpg">
 		</div>
 
  <p id = "footnote1">&nbsp;&nbsp;Data Source: WTA records for full season 2018 for the year-end top 30 women's tennis players. 
