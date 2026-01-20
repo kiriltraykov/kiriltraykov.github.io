@@ -84,6 +84,10 @@ p {
   #myname {
     font-size: 12vw; /* Scale up the name for mobile */
   }
+
+  #myname, #contactdetails {
+  text-align: center;
+}
   
   #button1 {
     margin-left: 5vw;
@@ -101,3 +105,4 @@ p {
     border-right: 0.1em solid #000; /* Ensures the cursor is visible on mobile */
   }
 }
+
