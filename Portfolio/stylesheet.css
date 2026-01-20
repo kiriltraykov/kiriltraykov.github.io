@@ -94,7 +94,7 @@ p {
     margin-left: 5vw;
     width: 90vw; /* Make button full width on mobile */
     font-size: 5vw;
-	margin-top: 40px;
+	margin-top: 30px;
 	margin-bottom: 50px;
   }
   
@@ -108,6 +108,7 @@ p {
     border-right: 0.1em solid #000; /* Ensures the cursor is visible on mobile */
   }
 }
+
 
 
 
