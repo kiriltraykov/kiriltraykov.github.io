@@ -47,7 +47,8 @@ p {
 }
 
 #button1 {
-    margin-left: 15vw;
+    margin-top: 3vw;
+	margin-left: 15vw;
 	font-family: 'Lora', serif;
 	font-size: 2vw;
 	background-color: #219ebc;
@@ -93,6 +94,7 @@ p {
     margin-left: 5vw;
     width: 90vw; /* Make button full width on mobile */
     font-size: 5vw;
+	margin-top: 40px;
 	margin-bottom: 50px;
   }
   
@@ -106,5 +108,6 @@ p {
     border-right: 0.1em solid #000; /* Ensures the cursor is visible on mobile */
   }
 }
+
 
 
