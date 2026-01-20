@@ -63,3 +63,41 @@ p {
 	color: black;
 	border-color: rgba(0,0,0,0.75);
 	}
+
+@media screen and (max-width: 768px) {
+  #box1, #box2 {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    flex-direction: column; /* Stack the image and text vertically */
+    gap: 20px;
+  }
+
+  #portfoliopic {
+    max-width: 80vw; /* Make the image much larger on small screens */
+    margin: 0 auto;  /* Center the image */
+  }
+
+  p {
+    font-size: 1rem; /* Use 'rem' or 'px' for readability on mobile */
+  }
+
+  #myname {
+    font-size: 12vw; /* Scale up the name for mobile */
+  }
+  
+  #button1 {
+    margin-left: 5vw;
+    width: 90vw; /* Make button full width on mobile */
+    font-size: 5vw;
+  }
+  
+  .typewrite {
+    font-size: 4.5vw; /* Scales the typewriter text to fit phone screens */
+    display: inline-block;
+    min-height: 1.2em; /* Prevents the page from jumping when text is deleted */
+  }
+
+  .typewrite > .wrap {
+    border-right: 0.1em solid #000; /* Ensures the cursor is visible on mobile */
+  }
+}
