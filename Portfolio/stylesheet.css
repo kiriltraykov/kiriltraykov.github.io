@@ -12,56 +12,54 @@
 }
 
 body {
-	margin-left:20%;
-}
-
-#myname {
-	font-size: 60px;
-	font-family: 'VT323', monospace;
-}
-
-p {
-	font-size: 1.3vw;
-}
-
-img.resize {
-  max-width:35%;
-  height: auto;
-  float: left;
-  margin: 0px 4% 0px 0px;
+	background-color: #cad2c5;
 }
 
 #box1, #box2 {
-   display: block;
+  margin-left: 15vw;
+  margin-right: 15vw;
+  display: flex;
+  gap: 5vw;
 }
 
 #box2 {
-	width: 82.5%;
 	font-family: 'Lora', serif;
-	font-size: 1.1em;
+}
+
+#myname {
+	font-size: 6vw;
+	font-family: 'VT323', monospace;
+	margin-top: 3vw;
+	margin-bottom: 3vw;
+}
+
+#portfoliopic {
+  max-width: 22.5vw;
+  height: auto;
+}
+
+#contactdetails {
+	margin-top: 0;
+}
+
+p {
+	font-size: 1.4vw;
 }
 
 #button1 {
-    display: block; margin: auto;
-	font-family: 'Crimson Text', serif;
+    margin-left: 15vw;
+	font-family: 'Lora', serif;
 	font-size: 2vw;
-	background-color: #699DB6;
+	background-color: #219ebc;
 	border-color: rgba(105, 157, 182, 0.3);
-	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+	border-shadow: 0 2px 0 rgba(0,0,0,0.5);
 	color: #FFF;
-	width: 30%;
+	width: 22.5vw;
 	cursor: pointer;
 	}
 
 #button1:hover {
-	background-color: #4F87A2;
-	border-color: rgba(0,0,0,0.5);
+	background-color: #ff928b;
+	color: black;
+	border-color: rgba(0,0,0,0.75);
 	}
-	
-#button1:active {
-	background-color: #3C677B;
-	border-color: rgba(0,0,0,0.9);
-	}
-
-
-
