@@ -99,7 +99,7 @@ p {
   }
   
   .typewrite {
-    font-size: 4vw; /* Scales the typewriter text to fit phone screens */
+    font-size: 4.5vw; /* Scales the typewriter text to fit phone screens */
     display: inline-block;
     min-height: 1.2em; /* Prevents the page from jumping when text is deleted */
   }
@@ -108,6 +108,7 @@ p {
     border-right: 0.1em solid #000; /* Ensures the cursor is visible on mobile */
   }
 }
+
 
 
 
