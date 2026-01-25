@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
 	font-family: 'Lora', serif;
 }
@@ -232,4 +236,5 @@ border-radius: 12px;
 html {
   scroll-behavior: smooth;
 }
+
 
