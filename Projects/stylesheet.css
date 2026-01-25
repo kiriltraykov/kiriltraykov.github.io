@@ -148,6 +148,14 @@ border-radius: 12px;
 /* --- MOBILE RESPONSIVE STYLES --- */
 @media screen and (max-width: 768px) {
     
+    /* Global Mobile Fix: Stop the "wiggle" and horizontal scrolling */
+    html, body {
+        width: 100%;
+        overflow-x: hidden; 
+        margin: 0;
+        padding: 0;
+    }
+
     /* 1. Fix Font Sizes: 'vw' is too small on mobile */
     h2 { font-size: 28px !important; }
     p { font-size: 18px !important; }
@@ -155,57 +163,46 @@ border-radius: 12px;
     h3 { font-size: 20px !important; }
     #box6, #box7, #box8, #box9, #box10, #box11 { font-size: 16px !important; padding: 5px 0; }
 
-    /* 2. Fix Layout: Stack everything vertically */
-    #thesis, #wrapper1, #wrapper2, 
+    /* 2. Force Layout to Column: Stacks all wrappers and containers */
+    #thesis, #wrapper1, #wrapper2, #wrapper3,
     #container6and7and8, #container9and10and11 {
-        display: flex;
-        flex-direction: column; /* Stacks items on top of each other */
-        width: 90% !important;   /* Use more screen width */
-        margin-left: 5% !important;
-        margin-right: 5% !important;
-    }
-
-    /* 3. Reset Margins and Widths */
-    .headlines, #noteOnTop, .projectTile, .projectTileType1, #colorvideo {
-        margin-left: 5% !important;
-        margin-right: 5% !important;
-        max-width: 100% !important; /* Allow boxes to fill screen width */
-    }
-
-    /* Remove side-margins from the containers that were side-by-side */
-    #container7, #container8, #container10, #container11 {
+        display: flex !important;
+        flex-direction: column !important; 
+        width: 100% !important;
         margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 0 20px !important; /* Standard mobile gutter */
     }
 
-    /* 4. Fix Video and Images */
-    video {
-        width: 100% !important; /* Video fills the container width */
-        height: auto !important;
-    }
-
-    .projectTile, .projectTileType1, .projectTileType2 {
-        padding: 15px !important;
-        margin-bottom: 20px;
-    }
-
-    /* Ensure images don't look squashed */
-    #container6 img, #container7 img, #container8 img, 
-    #container9 img, #container10 img, #container11 img {
-        height: auto !important;
+    /* 3. Headlines and Spacing */
+    .headlines, #noteOnTop, #colorvideo {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 0 20px !important;
         width: 100% !important;
     }
 
-	#wrapper1, #wrapper2, #wrapper3 {
-    display: block !important; /* Forces the wrappers to stop being 'Flex' */
-    width: 100% !important;
+    /* 4. Tile Fixes: Make them fill the screen width */
+    .projectTile, .projectTileType1, .projectTileType2,
+    #container6, #container7, #container8, #container9, #container10, #container11 {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-bottom: 20px !important;
+        box-sizing: border-box; /* Crucial: keeps padding inside the 100% width */
     }
 
-    .projectTileType1, .projectTileType2 {
-    max-width: 100% !important; /* Overrides the 30vw/40vw desktop limit */
-    width: 100% !important;
-    box-sizing: border-box; /* Ensures padding doesn't push the box off-screen */
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    /* 5. Video and Image Scaling */
+    video, img {
+        width: 100% !important;
+        height: auto !important;
+        display: block;
+    }
+
+    /* Ensure the bonus video box doesn't over-expand */
+    #colorvideo video {
+        max-width: 100% !important;
     }
 }
 
@@ -236,5 +233,6 @@ border-radius: 12px;
 html {
   scroll-behavior: smooth;
 }
+
 
 
