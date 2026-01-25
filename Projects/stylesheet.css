@@ -1,59 +1,95 @@
 body {
-	margin-left:3%;
-	margin-right:2%;
 	font-family: 'Lora', serif;
 }
 
+#noteOnTop, h6 {
+	margin-left: 6vw;
+}
+
+h6 {
+	margin-bottom: 2vh;
+}
+
+#notep, h6 {
+	font-size: 1.15vw;
+}
+
+.headlines {
+	margin-top: 7vh;
+	margin-left: 6vw;
+	margin-right: 10vw;
+}
+
 h2 {
-	font-size: 1.8vw;
+	font-size: 2vw;
 }
 
 p {
-	font-size: 1.1vw;
+	font-size: 1.5vw;
 }
 
-#containermaster {
-float: left;
-width: 50%;	
-border: 2px solid #999;
-border-radius: 12px;
-padding: 1%;
-margin-bottom: 2%;
-cursor: pointer;
+#thesis, #wrapper1 {
+	display: flex;
 }
 
-#box0 {
-background-color: #A01D26;
-color: white;
+#finalpresentation video {
+  border: 2px solid #999;
+  border-radius: 8px;
 }
 
-#container1to5 {
-float: right;
-width: 45%;
-display: flex;
+.projectTile, .projectTileType1, #container6and7and8, #container9and10and11, #colorvideo {
+	margin-left: 6vw;
+	margin-right: 3vw;
+	margin-bottom: 3vh;
 }
 
-#container1and2, #container3and4and5 {
-display: flex;
-flex: 1 1 0;
-flex-direction: column;
+.projectTileType2 {
+	margin-bottom: 3vh;
 }
 
-#container1, #container2 {
-border: 2px solid #999;
-border-radius: 12px;
-padding: 1%;
-margin-bottom: 2%;
-cursor: pointer;
+.projectTile {
+  display: block; /* Makes the whole area clickable */
+  text-decoration: none;
+  color: black;
+  border: 2px solid #999;
+  border-radius: 12px;
+  padding: 1.5vw;
+  max-width: 40vw;
+  transition: transform 0.2s ease; /* Subtle lift on hover */
 }
 
-#container3, #container4, #container5 {
-border: 2px solid #999;
-border-radius: 12px;
-padding: 1%;
-margin-bottom: 2%;
-margin-left: 5%;
-cursor: pointer;
+.projectTileType1, .projectTileType2 {
+  display: block; /* Makes the whole area clickable */
+  text-decoration: none;
+  color: black;
+  border: 2px solid #999;
+  border-radius: 12px;
+  padding: 1.5vw;
+  max-width: 30vw;
+  transition: transform 0.2s ease; /* Subtle lift on hover */
+}
+
+.projectTile:hover, .projectTileType1:hover, .projectTileType2:hover,
+#container6:hover,
+#container7:hover,
+#container8:hover,
+#container9:hover,
+#container10:hover,
+#container11:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.projectTileType1 h3, .projectTileType2 h3 {
+  font-size: 1.5vw;
+  margin-top: 0;
+  text-align: left;
+}
+
+.projectTile img, .projectTileType1 img, .projectTileType2 img {
+  width: 100%; /* Makes image responsive to the box */
+  height: auto;
+  display: block;
 }
 
 #container6and7and8, #container9and10and11 {
@@ -74,14 +110,6 @@ cursor: pointer;
 	margin-left: 1.5%;
 }
 
-#box1, #box2, #box3, #box4, #box5 {
-background-color: black;
-font-size: 1vw;
-text-align: center;
-color: white;
-border-radius: 12px;
-}
-
 #box6, #box7, #box8 {
 background-color: #BBCF4A;
 font-size: 1vw;
@@ -98,10 +126,7 @@ color: black;
 border-radius: 12px;
 }
 
-#containermaster img, 
-#container1 img, #container2 img, #container3 img, #container4 img, #container5 img,
-#container6 img,  #container8 img, 
-#container10 img, #container11 img {
+#container6 img,  #container8 img, #container10 img, #container11 img {
 	height: 90%;
 	width: 100%;
 }
@@ -111,10 +136,86 @@ border-radius: 12px;
 	width: 100%;
 }
 
+#colorvideo video {
+  border: 2px solid #999;
+  border-radius: 8px;
+}
 
+/* --- MOBILE RESPONSIVE STYLES --- */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Fix Font Sizes: 'vw' is too small on mobile */
+    h2 { font-size: 28px !important; }
+    p { font-size: 18px !important; }
+    #notep, h6 { font-size: 14px !important; }
+    h3 { font-size: 20px !important; }
+    #box6, #box7, #box8, #box9, #box10, #box11 { font-size: 16px !important; padding: 5px 0; }
 
+    /* 2. Fix Layout: Stack everything vertically */
+    #thesis, #wrapper1, #wrapper2, 
+    #container6and7and8, #container9and10and11 {
+        display: flex;
+        flex-direction: column; /* Stacks items on top of each other */
+        width: 90% !important;   /* Use more screen width */
+        margin-left: 5% !important;
+        margin-right: 5% !important;
+    }
 
-	
+    /* 3. Reset Margins and Widths */
+    .headlines, #noteOnTop, .projectTile, .projectTileType1, #colorvideo {
+        margin-left: 5% !important;
+        margin-right: 5% !important;
+        max-width: 100% !important; /* Allow boxes to fill screen width */
+    }
 
+    /* Remove side-margins from the containers that were side-by-side */
+    #container7, #container8, #container10, #container11 {
+        margin-left: 0 !important;
+    }
 
+    /* 4. Fix Video and Images */
+    video {
+        width: 100% !important; /* Video fills the container width */
+        height: auto !important;
+    }
 
+    .projectTile, .projectTileType1, .projectTileType2 {
+        padding: 15px !important;
+        margin-bottom: 20px;
+    }
+
+    /* Ensure images don't look squashed */
+    #container6 img, #container7 img, #container8 img, 
+    #container9 img, #container10 img, #container11 img {
+        height: auto !important;
+        width: 100% !important;
+    }
+}
+
+#backToTop {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed position */
+  bottom: 20px; 
+  right: 20px; 
+  z-index: 99; /* Sits on top of everything */
+  border: none;
+  outline: none;
+  background-color: #333; /* Matches your professional tone */
+  color: white;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 50px; /* Makes it a pill shape */
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#backToTop:hover {
+  background-color: #555;
+  transform: scale(1.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
