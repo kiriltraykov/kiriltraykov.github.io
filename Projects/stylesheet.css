@@ -190,6 +190,19 @@ border-radius: 12px;
         height: auto !important;
         width: 100% !important;
     }
+
+	#wrapper1, #wrapper2, #wrapper3 {
+    display: block !important; /* Forces the wrappers to stop being 'Flex' */
+    width: 100% !important;
+    }
+
+    .projectTileType1, .projectTileType2 {
+    max-width: 100% !important; /* Overrides the 30vw/40vw desktop limit */
+    width: 100% !important;
+    box-sizing: border-box; /* Ensures padding doesn't push the box off-screen */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    }
 }
 
 #backToTop {
@@ -219,3 +232,4 @@ border-radius: 12px;
 html {
   scroll-behavior: smooth;
 }
+
